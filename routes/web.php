@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/admin', function () {
+    return view('dashboard.index',[
+        "judul" => "Dashboard Admin"
+    ]);
+});
+
+Route::get('/admin/kamar',function(){
+    return view('kamar',[
+        "judul" => "Data Kamar"
+    ]);
+});
+
+Route::get("/admin/login",function(){
+    return view("dashboard.login",[
+        "judul" => "Admin Login"
+    ]);
 });
